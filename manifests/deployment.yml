@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8s-7040"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8s-7040"
+  template:
+    metadata:
+      labels:
+        app: "k8s-7040"
+    spec:
+      containers:
+        - name: "k8s-7040"
+          image: "k8sbe94co.azurecr.io/k8s"
+          ports:
+          - containerPort: 80
